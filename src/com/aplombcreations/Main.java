@@ -1,6 +1,6 @@
-package com.company;
+package com.aplombcreations;
 
-import com.company.Module.EModule;
+import com.aplombcreations.Module.EModule;
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class Main {
             System.out.println("Invalid index.");
             return null;
         } else {
-            for (EModule eModule : EModule.values()) {
+            for (EModule eModule : eModules) {
                 if (eModule.ordinal() + 1 == index) {
                     selectedModule = eModule;
                 }
