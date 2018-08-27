@@ -15,35 +15,32 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         moduleIndex = sc.nextInt();
-        switch (moduleIndex) {
-            case 1:
-                executeChoice(moduleIndex);
-                break;
-            case 2:
-                executeChoice(moduleIndex);
-                break;
-            case 3:
-                executeChoice(moduleIndex);
-                break;
-            default:
-                System.out.println("Invalid choice");
+        EModule selectedModule = getSelectedModule(moduleIndex);
+        if (selectedModule != null) {
+            executeChoice(selectedModule);
+        } else {
+            System.out.println("Couldn't find corresponding module...");
         }
     }
 
-    private static void executeChoice(int index) {
-        System.out.println("Selected module index: " + index);
-        EModule selectedModule = getSelectedModule(index);
-        System.out.println("Starting module: " + selectedModule.name());
+    private static void executeChoice(EModule eModule) {
+        System.out.println("Starting module: " + eModule.name());
     }
 
     private static EModule getSelectedModule(int index) {
         EModule selectedModule = null;
-        for (EModule eModule : EModule.values()) {
-            if (eModule.ordinal() + 1 == index) {
-                selectedModule = eModule;
+        EModule[] eModules = EModule.values();
+
+        if ((eModules.length < index) || index <= 0) {
+            System.out.println("Invalid index.");
+            return null;
+        } else {
+            for (EModule eModule : EModule.values()) {
+                if (eModule.ordinal() + 1 == index) {
+                    selectedModule = eModule;
+                }
             }
         }
-
         return selectedModule;
     }
 
