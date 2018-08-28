@@ -1,6 +1,8 @@
 package com.aplombcreations;
 
-import com.aplombcreations.Utils.Modules;
+import com.aplombcreations.Module.IModule;
+import com.aplombcreations.Module.ModuleFactory;
+import com.aplombcreations.Utilities.Modules;
 
 import java.util.Scanner;
 
@@ -23,8 +25,14 @@ public class Main {
         }
     }
 
-    private static void executeChoice(Modules modules) {
-        System.out.println("Starting module: " + modules.name());
+    private static void executeChoice(Modules eModule) {
+        System.out.println("Starting module: " + eModule.name());
+        IModule module = ModuleFactory.getModule(eModule.name());
+        if (module != null) {
+            System.out.println(module.getModuleName() + " object created!!");
+        } else {
+            System.out.println("Couldn't create selected module object.");
+        }
     }
 
     private static Modules getSelectedModule(int index) {

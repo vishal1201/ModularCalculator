@@ -1,4 +1,4 @@
-package com.aplombcreations.Utils;
+package com.aplombcreations.Utilities;
 
 public enum Modules {
 

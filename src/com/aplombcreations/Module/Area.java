@@ -1,4 +1,8 @@
 package com.aplombcreations.Module;
 
-public class Area {
+public class Area implements IModule {
+    @Override
+    public String getModuleName() {
+        return this.getClass().toString();
+    }
 }
