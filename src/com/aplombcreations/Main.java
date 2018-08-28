@@ -1,6 +1,6 @@
 package com.aplombcreations;
 
-import com.aplombcreations.EModule.Modules;
+import com.aplombcreations.Utils.Modules;
 
 import java.util.Scanner;
 
