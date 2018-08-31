@@ -9,4 +9,11 @@ public enum Modules {
         index = i;
     }
 
+    public String enumStrKey(int value) {
+        for (Modules module : Modules.values()) {
+
+        }
+        return null;
+    }
+// Testing pull request feature.
 }
