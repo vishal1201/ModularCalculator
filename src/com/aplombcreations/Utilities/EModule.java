@@ -9,10 +9,8 @@ public enum EModule {
         index = i;
     }
 
-    public String enumStrKey(int value) {
-        for (EModule module : EModule.values()) {
-
-        }
-        return null;
+    @Override
+    public String toString() {
+        return String.valueOf(index);
     }
 }

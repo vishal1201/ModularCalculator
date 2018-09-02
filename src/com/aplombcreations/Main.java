@@ -9,10 +9,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String args[]) {
         int moduleIndex;
-        System.out.println("Selcet a module:");
+        System.out.println("Select a module:");
 
         for (EModule eModule : EModule.values()) {
-            System.out.println((eModule.ordinal() + 1) + ". " + eModule.name());
+            System.out.println(eModule.toString() + ". " + eModule.name());
         }
 
         Scanner sc = new Scanner(System.in);
@@ -44,7 +44,7 @@ public class Main {
             return null;
         } else {
             for (EModule eModule : eModules) {
-                if (eModule.ordinal() + 1 == index) {
+                if (Integer.parseInt(eModule.toString()) == index) {
                     selectedModule = eModule;
                 }
             }
