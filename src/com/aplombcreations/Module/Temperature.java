@@ -6,6 +6,7 @@ public class Temperature implements IModule {
         return this.getClass().getSimpleName();
     }
 
+
     @Override
     public void getModuleMenu() {
 
