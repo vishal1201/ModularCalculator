@@ -5,4 +5,9 @@ public class Arithmetic implements IModule {
     public String getModuleName() {
         return this.getClass().toString();
     }
+
+    @Override
+    public void getModuleMenu() {
+
+    }
 }

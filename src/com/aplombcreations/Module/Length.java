@@ -5,4 +5,9 @@ public class Length implements IModule {
     public String getModuleName() {
         return this.getClass().toString();
     }
+
+    @Override
+    public void getModuleMenu() {
+
+    }
 }
