@@ -2,7 +2,7 @@ package com.aplombcreations;
 
 import com.aplombcreations.Module.IModule;
 import com.aplombcreations.Module.ModuleFactory;
-import com.aplombcreations.Utilities.Modules;
+import com.aplombcreations.Utilities.EModule;
 
 import java.util.Scanner;
 
@@ -11,13 +11,13 @@ public class Main {
         int moduleIndex;
         System.out.println("Selcet a module:");
 
-        for (Modules modules : Modules.values()) {
-            System.out.println((modules.ordinal() + 1) + ". " + modules.name());
+        for (EModule eModule : EModule.values()) {
+            System.out.println((eModule.ordinal() + 1) + ". " + eModule.name());
         }
 
         Scanner sc = new Scanner(System.in);
         moduleIndex = sc.nextInt();
-        Modules selectedModule = getSelectedModule(moduleIndex);
+        EModule selectedModule = getSelectedModule(moduleIndex);
         if (selectedModule != null) {
             executeChoice(selectedModule);
         } else {
@@ -25,7 +25,7 @@ public class Main {
         }
     }
 
-    private static void executeChoice(Modules eModule) {
+    private static void executeChoice(EModule eModule) {
         System.out.println("Starting module: " + eModule.name());
         IModule module = ModuleFactory.getModule(eModule.name());
         if (module != null) {
@@ -35,15 +35,15 @@ public class Main {
         }
     }
 
-    private static Modules getSelectedModule(int index) {
-        Modules selectedModule = null;
-        Modules[] modules = Modules.values();
+    private static EModule getSelectedModule(int index) {
+        EModule selectedModule = null;
+        EModule[] eModules = EModule.values();
 
-        if ((modules.length < index) || index <= 0) {
+        if ((eModules.length < index) || index <= 0) {
             System.out.println("Invalid index.");
             return null;
         } else {
-            for (Modules eModule : modules) {
+            for (EModule eModule : eModules) {
                 if (eModule.ordinal() + 1 == index) {
                     selectedModule = eModule;
                 }
